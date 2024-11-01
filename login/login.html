@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css" media="screen" title="no title">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+</head>
+
+<script lang="JavaScript">
+  function login(){
+      var user = document.getElementById("username").value;
+      var pass = document.getElementById("password").value;
+
+      // Menambahkan username dan password baru
+      var credentials = [
+          {username: "F.111.23.0038", password: "usmjaya"},
+          {username: "F.111.23.0064", password: "usmjaya"},
+          {username: "F.111.23.0070", password: "usmjaya"}
+      ];
+
+      var isAuthenticated = credentials.some(function(credential) {
+          return user === credential.username && pass === credential.password;
+      });
+
+      if (isAuthenticated) {
+          alert("Selamat anda Berhasil login");
+          window.open("../index.html");
+      } else {
+          alert("Username atau password salah");
+      }
+  }
+</script>
+
+<body>
+    <div class="login">
+
+          <div class="avatar">
+            <i class="fa fa-user"></i>
+          </div>
+
+          <h2>Login Form</h2>
+
+          <div class="box-login">
+            <i class="fas fa-envelope-open-text"></i>
+            <input type="text" placeholder="Nim" id="username">
+          </div>
+
+          <div class="box-login">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" id="password">
+          </div>
+
+          <input type="button" class="btn-login" value="Login" onClick="login()"></input>
+          
+      </div>
+  </body>
+  </html>
